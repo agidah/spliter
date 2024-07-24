@@ -9,11 +9,13 @@ namespace ExcelSplitter
     public partial class Form1 : Form
     {
         private string selectedFilePath;
+        private string selectedFolderPath;
 
         public Form1()
         {
             InitializeComponent();
             btnSelectFile.Click += BtnSelectFile_Click;
+            btnSelectFolder.Click += BtnSelectFolder_Click;
             btnProcess.Click += BtnProcess_Click;
         }
 
@@ -31,19 +33,32 @@ namespace ExcelSplitter
             }
         }
 
+        private void BtnSelectFolder_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
+            {
+                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    selectedFolderPath = folderBrowserDialog.SelectedPath;
+                    lblSelectedFolder.Text = selectedFolderPath;
+                }
+            }
+        }
+
         private void ResetForm()
         {
             txtRowCount.Text = string.Empty;
             txtStartRow.Text = string.Empty;
             progressBar1.Value = 0;
             lblSelectedFile.Text = string.Empty;
+            lblSelectedFolder.Text = string.Empty;
         }
 
         private async void BtnProcess_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(selectedFilePath) || string.IsNullOrEmpty(txtRowCount.Text) || string.IsNullOrEmpty(txtStartRow.Text))
+            if (string.IsNullOrEmpty(selectedFilePath) || string.IsNullOrEmpty(txtRowCount.Text) || string.IsNullOrEmpty(txtStartRow.Text) || string.IsNullOrEmpty(selectedFolderPath))
             {
-                MessageBox.Show("Please select an Excel file and enter the number of rows per file and the data start row.");
+                MessageBox.Show("Please select an Excel file, the number of rows per file, the data start row, and a folder to save the files.");
                 return;
             }
 
@@ -103,6 +118,7 @@ namespace ExcelSplitter
                                     newCell.FormulaA1 = cell.FormulaA1;
                                 }
                             }
+                            newWorksheet.Row(row).Height = worksheet.Row(row).Height;
                         }
 
                         // Copy merged cells in header rows
@@ -129,6 +145,7 @@ namespace ExcelSplitter
                                     newCell.FormulaA1 = cell.FormulaA1;
                                 }
                             }
+                            newWorksheet.Row(newRow).Height = worksheet.Row(row).Height;
                         }
 
                         // Copy merged cells in data rows
@@ -142,8 +159,14 @@ namespace ExcelSplitter
                             }
                         }
 
+                        // Copy column widths
+                        for (int col = 1; col <= worksheet.LastColumnUsed().ColumnNumber(); col++)
+                        {
+                            newWorksheet.Column(col).Width = worksheet.Column(col).Width;
+                        }
+
                         string newFileName = Path.GetFileNameWithoutExtension(filePath) + $"_{fileIndex}.xlsx";
-                        string newFilePath = Path.Combine(Path.GetDirectoryName(filePath), newFileName);
+                        string newFilePath = Path.Combine(selectedFolderPath, newFileName);
                         newWorkbook.SaveAs(newFilePath);
                         fileIndex++;
 

@@ -174,14 +174,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Split.exe" size="15304">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Split.exe" size="15816">
       <assemblyIdentity name="Split" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TzASkYHknbPzPl9vhfMK0t7YZ/ZQR0huTXVHeJOOFR4=</dsig:DigestValue>
+        <dsig:DigestValue>tpNT2tROHsr5/jncpB77kXhqcWUujTE6aBjxQqLI9d4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

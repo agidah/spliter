@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Split\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{36DCB0AB-CC9A-4785-B5AA-AEBE248D94A0}|Split\\Split.csproj|C:\\Split\\split\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{36DCB0AB-CC9A-4785-B5AA-AEBE248D94A0}|Split\\Split.csproj|c:\\split\\split\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{36DCB0AB-CC9A-4785-B5AA-AEBE248D94A0}|Split\\Split.csproj|solutionrelative:split\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{36DCB0AB-CC9A-4785-B5AA-AEBE248D94A0}|Split\\Split.csproj|c:\\split\\split\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{36DCB0AB-CC9A-4785-B5AA-AEBE248D94A0}|Split\\Split.csproj|C:\\Split\\split\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{36DCB0AB-CC9A-4785-B5AA-AEBE248D94A0}|Split\\Split.csproj|solutionrelative:split\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "Split\\Form1.cs",
               "ToolTip": "C:\\Split\\Split\\Form1.cs",
               "RelativeToolTip": "Split\\Form1.cs",
-              "ViewState": "AQIAAGEAAAAAAAAAAAAAAKAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAALcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-24T00:22:17.512Z",
               "IsPinned": true,
@@ -60,7 +60,7 @@
               "RelativeDocumentMoniker": "Split\\Form1.Designer.cs",
               "ToolTip": "C:\\Split\\Split\\Form1.Designer.cs",
               "RelativeToolTip": "Split\\Form1.Designer.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAAAD8AAAApAAAA",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAIwIkAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-24T00:22:13.676Z",
               "EditorCaption": ""
