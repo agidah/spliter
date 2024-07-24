@@ -34,7 +34,7 @@
             this.btnSelectFile.Name = "btnSelectFile";
             this.btnSelectFile.Size = new System.Drawing.Size(150, 23);
             this.btnSelectFile.TabIndex = 0;
-            this.btnSelectFile.Text = "Select Excel File";
+            this.btnSelectFile.Text = "엑셀파일 선택";
             this.btnSelectFile.UseVisualStyleBackColor = true;
 
             // 
@@ -53,7 +53,7 @@
             this.lblRowCount.Name = "lblRowCount";
             this.lblRowCount.Size = new System.Drawing.Size(76, 13);
             this.lblRowCount.TabIndex = 2;
-            this.lblRowCount.Text = "Rows per file:";
+            this.lblRowCount.Text = "몇개행씩 나누나요?:";
 
             // 
             // btnProcess
@@ -73,7 +73,7 @@
             this.lblStartRow.Name = "lblStartRow";
             this.lblStartRow.Size = new System.Drawing.Size(82, 13);
             this.lblStartRow.TabIndex = 4;
-            this.lblStartRow.Text = "Data Start Row:";
+            this.lblStartRow.Text = "데이터 시작행:";
 
             // 
             // txtStartRow
