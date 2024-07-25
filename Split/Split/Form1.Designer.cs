@@ -35,8 +35,8 @@
             this.btnSelectFile.Location = new System.Drawing.Point(12, 12);
             this.btnSelectFile.Name = "btnSelectFile";
             this.btnSelectFile.Size = new System.Drawing.Size(150, 23);
-            this.btnSelectFile.TabIndex = 0;
-            this.btnSelectFile.Text = "엑셀파일 선택하세요";
+            this.btnSelectFile.TabIndex = 0; // TabIndex set to 0
+            this.btnSelectFile.Text = "엑셀파일 선택해주세요";
             this.btnSelectFile.UseVisualStyleBackColor = true;
 
             // 
@@ -45,7 +45,7 @@
             this.txtRowCount.Location = new System.Drawing.Point(117, 50);
             this.txtRowCount.Name = "txtRowCount";
             this.txtRowCount.Size = new System.Drawing.Size(100, 20);
-            this.txtRowCount.TabIndex = 1;
+            this.txtRowCount.TabIndex = 1; // TabIndex set to 1
 
             // 
             // lblRowCount
@@ -55,17 +55,15 @@
             this.lblRowCount.Name = "lblRowCount";
             this.lblRowCount.Size = new System.Drawing.Size(76, 13);
             this.lblRowCount.TabIndex = 2;
-            this.lblRowCount.Text = "몇행수씩 나눌까요:";
+            this.lblRowCount.Text = "몇행씩 자를까요?:";
 
             // 
-            // btnProcess
+            // txtStartRow
             // 
-            this.btnProcess.Location = new System.Drawing.Point(12, 210);
-            this.btnProcess.Name = "btnProcess";
-            this.btnProcess.Size = new System.Drawing.Size(150, 23);
-            this.btnProcess.TabIndex = 3;
-            this.btnProcess.Text = "작업 시작";
-            this.btnProcess.UseVisualStyleBackColor = true;
+            this.txtStartRow.Location = new System.Drawing.Point(117, 82);
+            this.txtStartRow.Name = "txtStartRow";
+            this.txtStartRow.Size = new System.Drawing.Size(100, 20);
+            this.txtStartRow.TabIndex = 2; // TabIndex set to 2
 
             // 
             // lblStartRow
@@ -75,15 +73,17 @@
             this.lblStartRow.Name = "lblStartRow";
             this.lblStartRow.Size = new System.Drawing.Size(82, 13);
             this.lblStartRow.TabIndex = 4;
-            this.lblStartRow.Text = "데이터 시작 행 번호:";
+            this.lblStartRow.Text = "데이터 시작행은?:";
 
             // 
-            // txtStartRow
+            // btnSelectFolder
             // 
-            this.txtStartRow.Location = new System.Drawing.Point(117, 82);
-            this.txtStartRow.Name = "txtStartRow";
-            this.txtStartRow.Size = new System.Drawing.Size(100, 20);
-            this.txtStartRow.TabIndex = 5;
+            this.btnSelectFolder.Location = new System.Drawing.Point(12, 120);
+            this.btnSelectFolder.Name = "btnSelectFolder";
+            this.btnSelectFolder.Size = new System.Drawing.Size(150, 23);
+            this.btnSelectFolder.TabIndex = 3; // TabIndex set to 3
+            this.btnSelectFolder.Text = "파일 배포할 폴더선택";
+            this.btnSelectFolder.UseVisualStyleBackColor = true;
 
             // 
             // progressBar1
@@ -103,16 +103,6 @@
             this.lblSelectedFile.TabIndex = 7;
 
             // 
-            // btnSelectFolder
-            // 
-            this.btnSelectFolder.Location = new System.Drawing.Point(12, 120);
-            this.btnSelectFolder.Name = "btnSelectFolder";
-            this.btnSelectFolder.Size = new System.Drawing.Size(150, 23);
-            this.btnSelectFolder.TabIndex = 8;
-            this.btnSelectFolder.Text = "파일 배포할 폴더선택";
-            this.btnSelectFolder.UseVisualStyleBackColor = true;
-
-            // 
             // lblSelectedFolder
             // 
             this.lblSelectedFolder.AutoSize = true;
@@ -122,11 +112,21 @@
             this.lblSelectedFolder.TabIndex = 9;
 
             // 
+            // btnProcess
+            // 
+            this.btnProcess.Location = new System.Drawing.Point(12, 210);
+            this.btnProcess.Name = "btnProcess";
+            this.btnProcess.Size = new System.Drawing.Size(150, 23);
+            this.btnProcess.TabIndex = 4; // TabIndex set to 4
+            this.btnProcess.Text = "작업시작";
+            this.btnProcess.UseVisualStyleBackColor = true;
+
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 241);
+            this.ClientSize = new System.Drawing.Size(568, 241); // Adjusted width
             this.Controls.Add(this.lblSelectedFolder);
             this.Controls.Add(this.btnSelectFolder);
             this.Controls.Add(this.lblSelectedFile);
@@ -138,7 +138,7 @@
             this.Controls.Add(this.txtRowCount);
             this.Controls.Add(this.btnSelectFile);
             this.Name = "Form1";
-            this.Text = "엑셀파일 분할 프로그램";
+            this.Text = "Excel Splitter";
             this.ResumeLayout(false);
             this.PerformLayout();
         }

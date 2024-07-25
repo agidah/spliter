@@ -50,8 +50,10 @@ namespace ExcelSplitter
             txtRowCount.Text = string.Empty;
             txtStartRow.Text = string.Empty;
             progressBar1.Value = 0;
+            progressBar1.Style = ProgressBarStyle.Continuous;
             lblSelectedFile.Text = string.Empty;
             lblSelectedFolder.Text = string.Empty;
+            btnProcess.Enabled = true;
         }
 
         private async void BtnProcess_Click(object sender, EventArgs e)
@@ -74,10 +76,17 @@ namespace ExcelSplitter
                 return;
             }
 
-            progressBar1.Value = 0;
-            progressBar1.Maximum = (int)Math.Ceiling((double)(ReadRowCount(selectedFilePath) - startRow + 1) / rowCount);
+            // Disable the Process button and set the progress bar to Marquee style
+            btnProcess.Enabled = false;
+            progressBar1.Style = ProgressBarStyle.Marquee;
 
             await Task.Run(() => SplitAndSaveExcel(selectedFilePath, startRow, rowCount));
+
+            // Enable the Process button and reset the progress bar style
+            btnProcess.Enabled = true;
+            progressBar1.Style = ProgressBarStyle.Continuous;
+            progressBar1.Value = progressBar1.Maximum;
+
             MessageBox.Show("Files have been successfully created.");
         }
 
@@ -98,6 +107,8 @@ namespace ExcelSplitter
                 var lastRow = worksheet.LastRowUsed().RowNumber();
 
                 int fileIndex = 1;
+                int totalParts = (int)Math.Ceiling((double)(lastRow - startRow + 1) / rowCount);
+
                 for (int start = startRow; start <= lastRow; start += rowCount)
                 {
                     using (var newWorkbook = new XLWorkbook())
@@ -173,7 +184,8 @@ namespace ExcelSplitter
                         // Update progress bar
                         this.Invoke(new Action(() =>
                         {
-                            progressBar1.Value++;
+                            progressBar1.Style = ProgressBarStyle.Continuous;
+                            progressBar1.Value = Math.Min(progressBar1.Maximum, (int)((double)fileIndex / totalParts * progressBar1.Maximum));
                         }));
                     }
                 }
